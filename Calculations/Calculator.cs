@@ -14,9 +14,9 @@ namespace Calculations
         public static double GetSumOne(int n)
         {
             double res = 0;
-            for (double i = 1; i <= n; i++)
+            for (int i = 1; i <= n; i++)
             {
-                res += 1 / i;
+                res += 1 / (double)i;
             }
 
             return res;
@@ -31,7 +31,7 @@ namespace Calculations
         public static double GetSumTwo(int n)
         {
             double res = 0, numerator = 1;
-            for (double i = 1; i <= n; i++)
+            for (long i = 1; i <= n; i++)
             {
                 res += numerator / (i * (i + 1));
                 numerator *= -1;
@@ -100,7 +100,7 @@ namespace Calculations
         public static double GetSumFive(int n)
         {
             double res = 0, numerator = -1; 
-            for (double i = 1; i <= n; i++)
+            for (long i = 1; i <= n; i++)
             {
                 res += numerator / ((2 * i) + 1);
                 numerator *= -1;
@@ -117,7 +117,8 @@ namespace Calculations
         /// <returns>Sum of elements.</returns>
         public static double GetSumSix(int n)
         {
-            double res = 0, denominator = 0, fact = 1, count = 1;
+            double res = 0, denominator = 0, fact = 1;
+            int count = 1;
             for (double i = 1; i <= n; i++)
             {   
                 denominator += 1 / i;
@@ -155,9 +156,9 @@ namespace Calculations
         public static double GetSumEight(int n)
         {
             double res = 0, denominator = 0;
-            for (double i = 1; i <= n; i++)
+            for (int i = 1; i <= n; i++)
             {
-                denominator += Math.Sin(PI * i / 180);
+                denominator += Math.Sin(PI * (double)i / 180);
                 res += 1 / denominator;
             }
 
